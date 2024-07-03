@@ -872,7 +872,28 @@ $(window).on('load', function() {
   }
 
 
+function initIntroPopup(info, coordinates) {
+  // This is a pop-up for mobile device
+  if (window.matchMedia("only screen and (max-width: 760px)").matches) {
+    var wrappedInfo = info.replace(/(<([^>]+)>)/gi, ""); // Remove any HTML tags first (optional)
+    wrappedInfo = wrappedInfo.replace(/(.{200})/g, "$1<br>"); // Wrap text every 200 characters (adjust as needed)
+    $('body').append('<div id="mobile-intro-popup"><p>' + wrappedInfo +
+    '</p><div id="mobile-intro-popup-close"><i class="fas fa-times"></i></div></div>');
 
+    $('#mobile-intro-popup-close').click(function() {
+      $("#mobile-intro-popup").hide();
+    });
+    return;
+  }
+
+  /* Standard popup for bigger screens with fixed width */
+  L.popup({className: 'intro-popup', maxWidth: '400px'}) // Set max-width here
+    .setLatLng(coordinates) // this needs to change
+    .setContent(info.replace(/(<([^>]+)>)/gi, "").replace(/(.{200})/g, "$1<br>"))
+    .openOn(map);
+}
+
+/** OLD POPUP  
   function initIntroPopup(info, coordinates) {
     // This is a pop-up for mobile device
     if (window.matchMedia("only screen and (max-width: 760px)").matches) {
@@ -885,13 +906,14 @@ $(window).on('load', function() {
       return;
     }
 
-    /* And this is a standard popup for bigger screens */
+    /* And this is a standard popup for bigger screens *//*
     L.popup({className: 'intro-popup'})
       .setLatLng(coordinates) // this needs to change
       .setContent(info)
       .openOn(map);
   }
-             
+/*
+
   /**
    * Turns on and off polygon text labels depending on current map zoom
    */
