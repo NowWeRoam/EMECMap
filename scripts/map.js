@@ -924,7 +924,7 @@ function changeAttribution() {
     credit += ' | ';
   }
 
-  credit += ' with ';
+  credit += '';
   if (getSetting('_codeCredit')) credit += ' by ' + getSetting('_codeCredit');
   credit += attributionHTML;
 
