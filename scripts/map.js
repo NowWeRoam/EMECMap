@@ -916,7 +916,7 @@ function initIntroPopup(info, coordinates) {
     }
 
     /* And this is a standard popup for bigger screens */
-    L.popup({className: 'intro-popup'})
+/*    L.popup({className: 'intro-popup'})
       .setLatLng(coordinates) // this needs to change
       .setContent(info)
       .openOn(map);
