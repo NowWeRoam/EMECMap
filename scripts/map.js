@@ -924,7 +924,7 @@ $(window).on('load', function() {
     }
 
     credit += 'code';
-    if (getSetting('_codeCredit')) credit += ' code and data by ' + getSetting('_codeCredit');
+    if (getSetting('_codeCredit')) credit += ' and data by ' + getSetting('_codeCredit');
     credit += ' with ';    $('.leaflet-control-attribution')[0].innerHTML = credit + attributionHTML;
   }
 
