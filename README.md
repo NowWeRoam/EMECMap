@@ -4,7 +4,7 @@ Customize Leaflet maps with a linked Google Sheets template or CSV files and Geo
 ![Preview](preview.jpg)
 
 ## Live links (replace with your own)
-- Leaflet Map https://nowweroam.github.io/elk-moose-eagle-and-more-map/
+- Leaflet Map https://nowweroam.github.io/Elk-Moose-Eagle-And-More-Map/
 - Google Sheets template https://docs.google.com/spreadsheets/d/1sb0a6qlmOt_SHEY8adiHuDbHPqzzLuGWsrTwrPXW_mk/edit?gid=0#gid=0
 
 ## Create your own
