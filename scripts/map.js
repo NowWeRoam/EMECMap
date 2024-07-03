@@ -924,12 +924,13 @@ function changeAttribution() {
     credit += ' | ';
   }
 
-  credit += getSetting('_codeCredit') ? ' by ' + getSetting('_codeCredit');
-  credit += ' with ' attributionHTML;
+  credit += '';
+  if (getSetting('_codeCredit')) credit += ' by ' + getSetting('_codeCredit');
+  credit += ' using ';
+  credit += attributionHTML;
 
   $('.leaflet-control-attribution')[0].innerHTML = credit;
 }
-
 
 /** OLD CREDITS SCRIPT ************************************************************************************
   function changeAttribution() {
