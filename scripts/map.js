@@ -872,6 +872,37 @@ $(window).on('load', function() {
   }
 
 
+function initIntroPopup(info, coordinates) {
+  // This is a pop-up for mobile device
+  if (window.matchMedia("only screen and (max-width: 760px)").matches) {
+    $('body').append('<div id="mobile-intro-popup"><p>' + info +
+    '</p><div id="mobile-intro-popup-close"><i class="fas fa-times"></i></div></div>');
+
+    // Mobile popup styles with scrollbars (unchanged)
+    $('#mobile-intro-popup').css({
+      width: '300px', // Adjust width as needed
+      height: '200px', // Adjust height as needed
+      overflow-y: 'auto',
+      position: 'fixed', // Ensure fixed positioning for mobile
+      top: '50%', // Center vertically
+      left: '50%', // Center horizontally
+      transform: 'translate(-50%, -50%)' // Adjust centering based on width/height
+    });
+
+    $('#mobile-intro-popup-close').click(function() {
+      $("#mobile-intro-popup").hide();
+    });
+    return;
+  }
+
+  /* Standard popup for bigger screens with fixed width */
+  L.popup({className: 'intro-popup', maxWidth: '400px'}) // Set max-width here
+    .setLatLng(coordinates) // this needs to change
+    .setContent(info)
+    .openOn(map);
+}
+
+  /** OLD POPUP
   function initIntroPopup(info, coordinates) {
     // This is a pop-up for mobile device
     if (window.matchMedia("only screen and (max-width: 760px)").matches) {
@@ -890,7 +921,8 @@ $(window).on('load', function() {
       .setContent(info)
       .openOn(map);
   }
-
+*/
+             
   /**
    * Turns on and off polygon text labels depending on current map zoom
    */
