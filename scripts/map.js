@@ -924,8 +924,8 @@ function changeAttribution() {
     credit += ' | ';
   }
 
-  credit += getSetting('_codeCredit') ? ' by ' + getSetting('_codeCredit') : ' with ';
-  credit += attributionHTML;
+  credit += getSetting('_codeCredit') ? ' by ' + getSetting('_codeCredit');
+  credit += ' with ' attributionHTML;
 
   $('.leaflet-control-attribution')[0].innerHTML = credit;
 }
