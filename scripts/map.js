@@ -924,9 +924,8 @@ $(window).on('load', function() {
     }
 
     credit += 'code';
-    if (getSetting('_codeCredit')) credit += ' by ' + getSetting('_codeCredit');
-    credit += ' with ';
-    $('.leaflet-control-attribution')[0].innerHTML = credit + attributionHTML;
+    if (getSetting('_codeCredit')) credit += ' code and data by ' + getSetting('_codeCredit');
+    credit += ' with ';    $('.leaflet-control-attribution')[0].innerHTML = credit + attributionHTML;
   }
 
 /** OLD CREDITS SCRIPT ************************************************************************************
